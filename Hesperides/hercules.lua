@@ -13,8 +13,10 @@ local regularChestTag = "minecraft:chest"
 function findInPocket(toFind)
     for slot = 1, TOTAL_SLOTS, 1 do
         if turtle.getItemCount(slot) > 0 then
-            local item = turtle.getItemDetail(slot) 
+            turtle.select(slot)
+            local item = turtle.getItemDetail(slot)
             if item.name == toFind then
+                turtle.transferTo(1)
                 return true
             end
         end
