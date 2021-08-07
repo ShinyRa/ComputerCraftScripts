@@ -1,15 +1,5 @@
 print("Booting Hercules")
 print("Type: Turtle")
-print("Prerequisites:")
-
-print("1 juicer in inventory (preferably first inventory slot)")
-assert(findInPocket(Tags.juicerItem) > 0, "Required juicer not found in Hercules' inventory")
-print("Check")
-
-print("Wireless modem peripheral mounted to slot right")
-assert(peripheral.isPresent("right"), "No peripheral found on side 'right'")
-assert(peripheral.getType("right"), "Prerequisite modem not found on side 'right'")
-print("Check")
 
 -- Total inventory slots available to the turtle
 local TOTAL_SLOTS = 16
@@ -22,6 +12,18 @@ local Tags = {
     obsidianChest = "expandedstorage:obsidian_chest",
     regularChest  = "minecraft:chest",
 }
+
+print("Prerequisites:")
+
+print("1 juicer in inventory (preferably first inventory slot)")
+assert(findInPocket(Tags.juicerItem) > 0, "Required juicer not found in Hercules' inventory")
+print("Check")
+
+print("Wireless modem peripheral mounted to slot right")
+assert(peripheral.isPresent("right"), "No peripheral found on side 'right'")
+assert(peripheral.getType("right"), "Prerequisite modem not found on side 'right'")
+print("Check")
+
 
 -- Helper function
 -- Find item in inventory
