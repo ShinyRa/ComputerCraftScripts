@@ -27,7 +27,7 @@ function findInPocket(toFind)
         end
     end
 
-    return false
+    return -1
 end
 
 -- Helper function
