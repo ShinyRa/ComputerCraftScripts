@@ -76,18 +76,37 @@ function findOutputChest()
     walkTo(Tags.regularChest)
 end
 
+function canCraftPunch()
+    local craftable = true
+     for slot = 1, #PUNCH_CRAFTING_SLOTS do
+        turtle.select(PUNCH_CRAFTING_SLOTS[slot])
+        if turtle.getItemCount() == 0 then
+            craftable = false
+        end
+    end
+
+    return craftable
+end
+
 -- Helper function craft fruit punch
 function craftPunch()
     assert(findInPocket(Tags.juicerItem) > 0, "Required juicer not found in Hercules' inventory")
     findMelonChest()
 
-    -- Loop through the crafting slots to meet fruit punch crafting recipe
-    for slot = 1, #PUNCH_CRAFTING_SLOTS do
-        turtle.select(PUNCH_CRAFTING_SLOTS[slot])
-        -- Suck stack of melons
-        turtle.suck()
+    while not canCraftPunch() do
+        print("Can't craft punch :(")
+        -- Loop through the crafting slots to meet fruit punch crafting recipe
+        for slot = 1, #PUNCH_CRAFTING_SLOTS do
+            turtle.select(PUNCH_CRAFTING_SLOTS[slot])
+            -- Suck stack of melons
+            turtle.suck(1)
+        end
+        
+        sleep(5)
     end
-
+    
+    
+    print("Can craft punch!")
     turtle.craft()
 end
 
