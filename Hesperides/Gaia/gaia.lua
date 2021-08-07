@@ -2,6 +2,7 @@ local screen = peripheral.wrap("top")
 
 local logo = paintutils.loadImage("images/logo.nfp")
 local logo2 = paintutils.loadImage("images/logo2.nfp")
+local punch = paintutils.loadImage("images/punch.nfp")
 
 local switch = true
 -- Redirect all terminal traffic to screen
@@ -21,19 +22,22 @@ while true do
     
     -- Reset colours
     resetColours()
-
-    term.setCursorPos(4, 4)
+    
+    term.setCursorPos(3, 4)
     term.write("Danny & Tijs'")
-
+    
     term.setTextColour(colours.pink)
-    term.setCursorPos(5, 5)
+    term.setCursorPos(4, 5)
     term.write("sompige sapjes")
     
-    term.redirect(term)
-    local event, button, cx, cy = os.pullEvent()
-    if event == "mouse_click" then
-        paintutils.drawBox(7, 15, 10, 15, colours.yellow)
+    term.setCursorPos(15, 1)
+    paintutils.drawImage(punch, term.getCursorPos())
+    
+    local event = os.pullEvent()
+    if event == "monitor_touch" then
+
     end
+    -- paintutils.drawBox(7, 15, 10, 15, colours.yellow)
 
     resetColours()
     sleep(5)

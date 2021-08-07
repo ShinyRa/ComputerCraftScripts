@@ -18,6 +18,7 @@ if string.lower(label) == "gaia" then
     shell.setDir("images/")
     shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Gaia/images/logo.nfp")
     shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Gaia/images/logo2.nfp")
+    shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Gaia/images/punch.nfp")
 elseif string.lower(label) == "hercules" then
     print("Installation for Hercules")
     print("Downloading files")
