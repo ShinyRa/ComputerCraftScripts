@@ -30,9 +30,14 @@ while true do
     term.setCursorPos(4, 5)
     term.write("sompige sapjes")
     
-    term.setCursorPos(15, 1)
+    term.setCursorPos(5, 10)
     paintutils.drawImage(punch, term.getCursorPos())
+    resetColours()
     
+    term.setCursorPos(5, 18)
+    term.setTextColour(colours.red)
+    term.write("Fruit punch")
+
     local event = os.pullEvent()
     if event == "monitor_touch" then
 
