@@ -6,7 +6,7 @@ print("1 juicer in inventory (preferably first inventory slot)")
 -- Total inventory slots available to the turtle
 local TOTAL_SLOTS = 16
 -- Slots to populate when crafting fruit punch
-local JUICE_CRAFTING_SLOTS = {2, 5, 6}
+local PUNCH_CRAFTING_SLOTS = {2, 5, 6}
 
 local juicerItemTag = "pamhc2foodcore:juiceritem"
 local fruitPunchItemTag = "pamhc2foodcore:fruitpunchitem"
@@ -16,7 +16,7 @@ local regularChestTag = "minecraft:chest"
 -- Helper function
 -- Find item in inventory
 function findInPocket(toFind)
-    for slot = 1, TOTAL_SLOTS, 1 do
+    for slot = 1, #TOTAL_SLOTS do
         if turtle.getItemCount(slot) > 0 then
             local item = turtle.getItemDetail(slot)
             turtle.select(slot)
