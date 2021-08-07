@@ -16,7 +16,7 @@ local regularChestTag = "minecraft:chest"
 -- Helper function
 -- Find item in inventory
 function findInPocket(toFind)
-    for slot = 1, #TOTAL_SLOTS do
+    for slot = 1, TOTAL_SLOTS, 1 do
         if turtle.getItemCount(slot) > 0 then
             local item = turtle.getItemDetail(slot)
             turtle.select(slot)
