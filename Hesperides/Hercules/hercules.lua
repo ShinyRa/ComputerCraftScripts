@@ -81,7 +81,6 @@ function craftPunch()
     findMelonChest()
 
     while not canCraftPunch() do
-        print("Can't craft punch :(")
         -- Loop through the crafting slots to meet fruit punch crafting recipe
         for slot = 1, #PUNCH_CRAFTING_SLOTS do
             turtle.select(PUNCH_CRAFTING_SLOTS[slot])
@@ -90,12 +89,8 @@ function craftPunch()
                 turtle.suck(1)
             end
         end
-        
-        sleep(5)
     end
     
-    
-    print("Can craft punch!")
     turtle.craft()
 end
 
@@ -125,5 +120,5 @@ print("Check")
 while true do
     craftPunch()
     depositPunch()
-    sleep(5)
+    sleep(1)
 end
