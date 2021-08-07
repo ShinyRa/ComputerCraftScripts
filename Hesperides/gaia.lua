@@ -1,7 +1,8 @@
 print("Booting Gaia")
-print("Gaia prerequisites:")
-print("Screen peripheral to slot top")
+print("Type: Turtle")
+print("Prerequisites:")
 print("2 Logo animation pictures")
+
 
 local screen = peripheral.wrap("top")
 
