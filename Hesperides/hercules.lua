@@ -4,7 +4,7 @@ print("1 juicer in inventory")
 
 local TOTAL_SLOTS = 16
 local JuicerItemTag = "pamhc2foodcore:juiceritem"
-local ObsidianChestTag = "expendedstorage:obsidian_chest"
+local ObsidianChestTag = "expandedstorage:obsidian_chest"
 
 function findInPocket(toFind)
     for slot = 1, TOTAL_SLOTS, 1 do
