@@ -9,7 +9,7 @@ local label = os.getComputerLabel()
 if string.lower(label) == "gaia" then
     print("Installation for Gaia")
     print("Downloading files")
-    shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/gaia.lua")
+    shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Gaia/gaia.lua")
     shell.run("cp gaia.lua ../startup.lua")
 
     -- Create additional images directory with logos
@@ -21,7 +21,7 @@ if string.lower(label) == "gaia" then
 elseif string.lower(label) == "hercules" then
     print("Installation for Hercules")
     print("Downloading files")
-    shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/hercules.lua")
+    shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Hercules/hercules.lua")
     shell.run("cp hercules.lua ../startup.lua")
 end
 
