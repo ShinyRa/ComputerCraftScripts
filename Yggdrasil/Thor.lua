@@ -1,7 +1,7 @@
 print("Booting Thor")
 print("Type: Turtle")
 print("Prerequisites:")
-print("Modem peripheral mounted to slot right")
+print("Wireless modem peripheral mounted to slot right")
 
 local modem = peripheral.wrap("right")
 

@@ -2,7 +2,7 @@ print("Booting Gaia")
 print("Type: Turtle")
 print("Prerequisites:")
 print("2 Logo animation pictures")
-
+print("Wireless modem peripheral mounted to slot right")
 
 local screen = peripheral.wrap("top")
 

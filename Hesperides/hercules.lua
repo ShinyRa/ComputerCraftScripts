@@ -2,6 +2,7 @@ print("Booting Hercules")
 print("Type: Turtle")
 print("Prerequisites:")
 print("1 juicer in inventory (preferably first inventory slot)")
+print("Wireless modem peripheral mounted to slot right")
 
 -- Total inventory slots available to the turtle
 local TOTAL_SLOTS = 16
