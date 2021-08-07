@@ -1,5 +1,8 @@
+shell.run("rm startup.lua")
+shell.run("rm hercules.lua")
 print("Installing hercules...")
 print("Downloading files")
 shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/hercules.lua")
 print("Running hercules")
 shell.run("hercules")
+shell.run("rm installer.lua")
