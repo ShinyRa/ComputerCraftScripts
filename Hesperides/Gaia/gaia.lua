@@ -18,13 +18,18 @@ print("Booting Gaia")
 print("Type: Computer")
 print("Prerequisites:")
 
-print("2 Logo animation pictures")
+print("Images folder")
 assert(fs.isDir("images/"), "Prerequisite image folder not found on disk")
 print("Check")
 
 print("Wireless modem peripheral mounted to slot right")
 assert(peripheral.isPresent("right"), "No peripheral found on side 'right'")
 assert(peripheral.getType("right") == "modem", "Prerequisite modem not found on side 'right'")
+print("Check")
+
+print("Speaker peripheral mounted to slot left")
+assert(peripheral.isPresent("left", "No peripheral found on side 'left'"))
+assert(peripheral.getType("left" == "speaker", "Prerequisite speaker not found on side 'left'"))
 print("Check")
 
 rednet.open("right")
@@ -59,10 +64,13 @@ while true do
     term.setTextColour(colours.red)
     term.write("Fruit punch")
     resetColours()
-
-    paintutils.drawBox(15, 15, 25, 20, colours.yellow)
+    
+    paintutils.drawFilledBox(15, 13, 22, 17, colours.yellow)
+    resetColours()
     term.setCursorPos(16, 16)
+    term.setBackgroundColour(colours.yellow)
     term.write("Order x64")
+    resetColours()
 
     local event = os.pullEvent()
     if event == "monitor_touch" then
