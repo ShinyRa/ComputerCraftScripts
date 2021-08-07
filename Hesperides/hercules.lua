@@ -1,8 +1,11 @@
 print("Booting Hercules")
-print("Hercules prerequisites:")
-print("1 juicer in inventory")
+print("Type: Turtle")
+print("Prerequisites:")
+print("1 juicer in inventory (preferably first inventory slot)")
 
+-- Total inventory slots available to the turtle
 local TOTAL_SLOTS = 16
+-- Slots to populate when crafting fruit punch
 local JUICE_CRAFTING_SLOTS = {2, 5, 6}
 
 local juicerItemTag = "pamhc2foodcore:juiceritem"
@@ -64,12 +67,14 @@ function findOutputChest()
 end
 
 -- Helper function craft item
-function craftJuice()
+function craftPunch()
     assert(findInPocket(juicerItemTag) > 0, "Required juicer not found in Hercules' inventory")
     findMelonChest()
 
+    -- Loop through the crafting slots to meet fruit punch crafting recipe
     for slot = 1, #JUICE_CRAFTING_SLOTS do
         turtle.select(JUICE_CRAFTING_SLOTS[slot])
+        -- Suck stack of melons
         turtle.suck()
     end
 
