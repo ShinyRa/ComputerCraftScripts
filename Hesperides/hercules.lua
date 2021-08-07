@@ -8,10 +8,12 @@ local TOTAL_SLOTS = 16
 -- Slots to populate when crafting fruit punch
 local PUNCH_CRAFTING_SLOTS = {2, 5, 6}
 
-local juicerItemTag = "pamhc2foodcore:juiceritem"
-local fruitPunchItemTag = "pamhc2foodcore:fruitpunchitem"
-local obsidianChestTag = "expandedstorage:obsidian_chest"
-local regularChestTag = "minecraft:chest"
+local Tags = {
+    juicerItem    = "pamhc2foodcore:juiceritem",
+    fruitPunch    = "pamhc2foodcore:fruitpunchitem",
+    obsidianChest = "expandedstorage:obsidian_chest",
+    regularChest  = "minecraft:chest",
+}
 
 -- Helper function
 -- Find item in inventory
@@ -55,20 +57,20 @@ function walkTo(blockTag)
 end
 
 function findMelonChest()
-    walkTo(obsidianChestTag)
+    walkTo(Tags.obsidianChest)
 end
 
 function findJuiceChest()
-    walkTo(obsidianChestTag)
+    walkTo(Tags.obsidianChest)
 end
 
 function findOutputChest()
-    walkTo(regularChestTag)
+    walkTo(Tags.regularChest)
 end
 
 -- Helper function craft item
 function craftPunch()
-    assert(findInPocket(juicerItemTag) > 0, "Required juicer not found in Hercules' inventory")
+    assert(findInPocket(Tags.juicerItem) > 0, "Required juicer not found in Hercules' inventory")
     findMelonChest()
 
     -- Loop through the crafting slots to meet fruit punch crafting recipe
@@ -82,7 +84,7 @@ function craftPunch()
 end
 
 function depositPunch()
-    local fruitPunchSlot = findInPocket(fruitPunchItemTag)
+    local fruitPunchSlot = findInPocket(Tags.fruitPunch)
     if fruitPunchSlot > 0 then
         findJuiceChest()
         turtle.select(fruitPunchSlot)
