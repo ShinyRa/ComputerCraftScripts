@@ -1,16 +1,3 @@
-print("Booting Gaia")
-print("Type: Computer")
-print("Prerequisites:")
-
-print("2 Logo animation pictures")
-assert(fs.isDir("images/"), "Prerequisite image folder not found on disk")
-print("Check")
-
-print("Wireless modem peripheral mounted to slot right")
-assert(peripheral.isPresent("right"), "No peripheral found on side 'right'")
-assert(peripheral.getType("right"), "Prerequisite modem not found on side 'right'")
-print("Check")
-
 local screen = peripheral.wrap("top")
 
 local logo = paintutils.loadImage("images/logo.nfp")
@@ -48,3 +35,16 @@ while true do
     resetColours()
     sleep(2)
 end
+
+print("Booting Gaia")
+print("Type: Computer")
+print("Prerequisites:")
+
+print("2 Logo animation pictures")
+assert(fs.isDir("images/"), "Prerequisite image folder not found on disk")
+print("Check")
+
+print("Wireless modem peripheral mounted to slot right")
+assert(peripheral.isPresent("right"), "No peripheral found on side 'right'")
+assert(peripheral.getType("right"), "Prerequisite modem not found on side 'right'")
+print("Check")
