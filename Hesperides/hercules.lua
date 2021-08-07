@@ -69,7 +69,7 @@ function craftJuice()
     findMelonChest()
 
     for slot = 1, #JUICE_CRAFTING_SLOTS do
-        turtle.select(JUICE_CRAFTING_SLOTSs[slot])
+        turtle.select(JUICE_CRAFTING_SLOTS[slot])
         turtle.suck()
     end
 
