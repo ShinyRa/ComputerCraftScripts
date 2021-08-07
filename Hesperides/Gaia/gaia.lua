@@ -32,6 +32,7 @@ assert(peripheral.isPresent("left", "No peripheral found on side 'left'"))
 assert(peripheral.getType("left") == "speaker", "Prerequisite speaker not found on side 'left'")
 print("Check")
 
+local speaker = peripheral.wrap("left")
 rednet.open("right")
 
 while true do
@@ -65,15 +66,17 @@ while true do
     term.write("Fruit punch")
     resetColours()
     
-    paintutils.drawFilledBox(15, 10, 26, 13, colours.yellow)
+    paintutils.drawFilledBox(15, 10, 28, 13, colours.yellow)
     resetColours()
-    term.setCursorPos(20, 13)
+    term.setCursorPos(18, 12)
+    term.setTextColour(colours.black)
     term.setBackgroundColour(colours.yellow)
     term.write("Order x64")
     resetColours()
 
     local event = os.pullEvent()
     if event == "monitor_touch" then
+        speaker.playSound("ui.button.click")
         rednet.send({}, "hesperides_order_punch")
     end
 
