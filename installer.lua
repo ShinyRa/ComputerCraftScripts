@@ -11,6 +11,13 @@ if string.lower(label) == "gaia" then
     print("Downloading files")
     shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/gaia.lua")
     shell.run("cp gaia.lua ../startup.lua")
+
+    -- Create additional images directory with logos
+    shell.setDir("/")
+    fs.makeDir("images")
+    shell.setDir("images/")
+    shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Gaia/images/logo.nfp")
+    shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Gaia/images/logo2.nfp")
 elseif string.lower(label) == "hercules" then
     print("Installation for Hercules")
     print("Downloading files")
