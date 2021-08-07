@@ -7,7 +7,7 @@ local TOTAL_SLOTS = 16
 function findInPocket (toFind)
     local found = false
     for slot = 1, TOTAL_SLOTS, 1 do
-        if turtle.getItemCount(slot) > 0 do
+        if turtle.getItemCount(slot) > 0 then
             local item = turtle.getItemDetail(slot) 
             found = item.name == toFind
         end
