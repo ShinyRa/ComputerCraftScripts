@@ -20,3 +20,16 @@ function findInPocket(toFind)
 end
 
 assert(findInPocket(JuicerItemTag), "Required juicer not found in Hercules' inventory")
+
+while turtle.inspect().name ~= ObsidianChestTag do
+    print("Not an obsidian chest")
+    local success, data = turtle.inspect()
+    print(textutils.serialise(data))
+    
+    if success then
+        turtle.turnRight() 
+    end
+    if not success then 
+        turtle.forward()
+    end
+end
