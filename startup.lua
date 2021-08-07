@@ -1,1 +1,5 @@
-print("test")
+print("Installing hercules...")
+print("Downloading files")
+shell.run("wget https://github.com/ShinyRa/ComputerCraftScripts/blob/main/Hesperides/hercules.lua")
+print("Running hercules")
+shell.run("hercules")
