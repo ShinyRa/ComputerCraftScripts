@@ -13,7 +13,7 @@ function findInPocket (toFind)
         end
 
         if found then 
-            break
+            return found
         end
     end
 end
