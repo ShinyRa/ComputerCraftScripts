@@ -74,7 +74,7 @@ while true do
 
     local event = os.pullEvent()
     if event == "monitor_touch" then
-        broadcast.send({}, "hesperides_order_punch")
+        rednet.send({}, "hesperides_order_punch")
     end
 
     sleep(5)
