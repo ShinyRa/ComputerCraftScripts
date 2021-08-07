@@ -90,6 +90,6 @@ function depositJuice()
     end 
 end
 
-craftJuice()
+craftPunch()
 depositJuice()
 
