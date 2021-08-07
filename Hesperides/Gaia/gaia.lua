@@ -27,13 +27,18 @@ while true do
 
     term.setTextColour(colours.pink)
     term.setCursorPos(5, 5)
-    textutils.slowPrint("sompige sapjes")
+    term.write("sompige sapjes")
     
+    local event, button, cx, cy = os.pullEvent()
+    if event == "monitor_click" then
+        term.write("Click!")
+    end
+
     -- Button
     paintutils.drawBox(7, 15, 10, 15, colours.yellow)
 
     resetColours()
-    sleep(2)
+    sleep(5)
 end
 
 print("Booting Gaia")
