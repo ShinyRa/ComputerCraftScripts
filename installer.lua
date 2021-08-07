@@ -1,3 +1,4 @@
+shell.run("set motd.enabled false")
 print("Removing junk")
 fs.delete("startup.lua")
 fs.delete("pulled/")
