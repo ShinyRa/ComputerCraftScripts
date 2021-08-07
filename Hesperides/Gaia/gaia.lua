@@ -29,7 +29,7 @@ print("Check")
 
 print("Speaker peripheral mounted to slot left")
 assert(peripheral.isPresent("left", "No peripheral found on side 'left'"))
-assert(peripheral.getType("left" == "speaker", "Prerequisite speaker not found on side 'left'"))
+assert(peripheral.getType("left") == "speaker", "Prerequisite speaker not found on side 'left'")
 print("Check")
 
 rednet.open("right")
@@ -65,9 +65,9 @@ while true do
     term.write("Fruit punch")
     resetColours()
     
-    paintutils.drawFilledBox(15, 13, 22, 17, colours.yellow)
+    paintutils.drawFilledBox(15, 10, 26, 13, colours.yellow)
     resetColours()
-    term.setCursorPos(16, 16)
+    term.setCursorPos(20, 13)
     term.setBackgroundColour(colours.yellow)
     term.write("Order x64")
     resetColours()
