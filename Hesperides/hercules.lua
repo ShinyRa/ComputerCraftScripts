@@ -68,7 +68,7 @@ function findOutputChest()
     walkTo(Tags.regularChest)
 end
 
--- Helper function craft item
+-- Helper function craft fruit punch
 function craftPunch()
     assert(findInPocket(Tags.juicerItem) > 0, "Required juicer not found in Hercules' inventory")
     findMelonChest()
@@ -83,6 +83,7 @@ function craftPunch()
     turtle.craft()
 end
 
+-- Helper function deposit fruit punch
 function depositPunch()
     local fruitPunchSlot = findInPocket(Tags.fruitPunch)
     if fruitPunchSlot > 0 then
