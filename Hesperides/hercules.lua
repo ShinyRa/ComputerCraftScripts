@@ -21,15 +21,26 @@ end
 
 assert(findInPocket(JuicerItemTag), "Required juicer not found in Hercules' inventory")
 
-while turtle.inspect().name ~= ObsidianChestTag do
-    print("Not an obsidian chest")
+local chestFound
+
+while not chestFound do
     local success, data = turtle.inspect()
-    print(textutils.serialise(data))
     
     if success then
+        print(textutils.serialise(data))
+        if data.name == ObsidianChestTag then
+            print("Found obisidian chest")
+            chestFound = true
+            break;
+        end
+        
+        print("Not an obsidian chest. Turning")
         turtle.turnRight() 
     end
-    if not success then 
+    if not success then
+        print("Nothing found... moving on")
         turtle.forward()
     end
+    
+    sleep(1)
 end
