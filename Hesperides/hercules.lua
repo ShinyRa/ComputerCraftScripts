@@ -3,6 +3,7 @@ print("Hercules prerequisites:")
 print("1 juicer in inventory")
 
 local TOTAL_SLOTS = 16
+local JuicerItemTag = "pamhc2foodcore:juiceritem"
 
 function findInPocket(toFind)
     for slot = 1, TOTAL_SLOTS, 1 do
@@ -13,8 +14,8 @@ function findInPocket(toFind)
             end
         end
     end
-    
+
     return false
 end
 
-assert(findInPocket("pamhc2foodcord:juiceritem"), "Required juicer not found in Hercules' inventory")
+assert(findInPocket(JuicerItemTag), "Required juicer not found in Hercules' inventory")
