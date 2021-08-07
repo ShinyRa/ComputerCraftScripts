@@ -4,12 +4,14 @@ print("1 juicer in inventory")
 
 local TOTAL_SLOTS = 16
 
-function findInPocket (toFind)
+function findInPocket(toFind)
     local found = false
     for slot = 1, TOTAL_SLOTS, 1 do
         if turtle.getItemCount(slot) > 0 then
             local item = turtle.getItemDetail(slot) 
             found = item.name == toFind
+            print(item == toFind)
+            print(item.name == toFind)
         end
 
         if found then 
@@ -18,4 +20,4 @@ function findInPocket (toFind)
     end
 end
 
-assert(findInPocket("pamhc2foodcord:juiceritem"))
+assert(findInPocket("pamhc2foodcord:juiceritem"), "Required juicer found in Hercules' inventory")
