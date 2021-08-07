@@ -1,8 +1,15 @@
 print("Booting Gaia")
-print("Type: Turtle")
+print("Type: Computer")
 print("Prerequisites:")
+
 print("2 Logo animation pictures")
+assert(fs.isDir("images/"), "Prerequisite image folder not found on disk")
+print("Check")
+
 print("Wireless modem peripheral mounted to slot right")
+assert(peripheral.isPresent("right"), "No peripheral found on side 'right'")
+assert(peripheral.getType("right"), "Prerequisite modem not found on side 'right'")
+print("Check")
 
 local screen = peripheral.wrap("top")
 
