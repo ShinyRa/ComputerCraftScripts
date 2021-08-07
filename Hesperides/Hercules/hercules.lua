@@ -85,8 +85,10 @@ function craftPunch()
         -- Loop through the crafting slots to meet fruit punch crafting recipe
         for slot = 1, #PUNCH_CRAFTING_SLOTS do
             turtle.select(PUNCH_CRAFTING_SLOTS[slot])
-            -- Suck stack of melons
-            turtle.suck(1)
+            if turtle.getItemCount() == 0 then
+                -- Suck 1 melonslice to selected slot
+                turtle.suck(1)
+            end
         end
         
         sleep(5)
@@ -120,6 +122,8 @@ assert(peripheral.isPresent("right"), "No peripheral found on side 'right'")
 assert(peripheral.getType("right"), "Prerequisite modem not found on side 'right'")
 print("Check")
 
-craftPunch()
-depositPunch()
-
+while true do
+    craftPunch()
+    depositPunch()
+    sleep(5)
+end
