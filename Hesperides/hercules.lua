@@ -72,8 +72,8 @@ function craftPunch()
     findMelonChest()
 
     -- Loop through the crafting slots to meet fruit punch crafting recipe
-    for slot = 1, #JUICE_CRAFTING_SLOTS do
-        turtle.select(JUICE_CRAFTING_SLOTS[slot])
+    for slot = 1, #PUNCH_CRAFTING_SLOTS do
+        turtle.select(PUNCH_CRAFTING_SLOTS[slot])
         -- Suck stack of melons
         turtle.suck()
     end
@@ -81,15 +81,15 @@ function craftPunch()
     turtle.craft()
 end
 
-function depositJuice()
-    local fruitJuiceSlot = findInPocket(fruitPunchItemTag)
-    if fruitJuiceSlot > 0 then
+function depositPunch()
+    local fruitPunchSlot = findInPocket(fruitPunchItemTag)
+    if fruitPunchSlot > 0 then
         findJuiceChest()
-        turtle.select(fruitJuiceSlot)
+        turtle.select(fruitPunchSlot)
         turtle.dropDown()
     end 
 end
 
 craftPunch()
-depositJuice()
+depositPunch()
 
