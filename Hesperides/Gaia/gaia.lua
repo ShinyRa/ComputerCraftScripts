@@ -66,7 +66,7 @@ while true do
     term.write("Fruit punch")
     resetColours()
     
-    paintutils.drawFilledBox(15, 10, 28, 13, colours.yellow)
+    paintutils.drawFilledBox(15, 10, 29, 13, colours.yellow)
     resetColours()
     term.setCursorPos(18, 12)
     term.setTextColour(colours.black)
@@ -77,8 +77,8 @@ while true do
     local event = os.pullEvent()
     if event == "monitor_touch" then
         speaker.playSound("ui.button.click")
-        rednet.send({}, "hesperides_order_punch")
+        rednet.broadcast({}, "hesperides_order_punch")
     end
 
-    sleep(5)
+    sleep(3)
 end
