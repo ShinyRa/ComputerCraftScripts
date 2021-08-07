@@ -41,7 +41,7 @@ function walkTo(blockTag)
                 break;
             end
             
-            turtle.turnRight() 
+            turtle.turnLeft() 
         end
         if not success then
             turtle.forward()
@@ -79,7 +79,7 @@ end
 function depositJuice()
     local fruitJuiceSlot = findInPocket(fruitPunchItemTag)
     if fruitJuiceSlot > 0 then
-        findOutputChest()
+        findJuiceChest()
         turtle.select(fruitJuiceSlot)
         turtle.dropDown()
     end 
