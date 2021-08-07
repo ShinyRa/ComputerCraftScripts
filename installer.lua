@@ -1,3 +1,4 @@
+print("Removing junk")
 shell.run("rm startup.lua")
 shell.run("rm hercules.lua")
 print("Installing hercules...")
