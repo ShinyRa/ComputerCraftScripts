@@ -29,13 +29,11 @@ while true do
     term.setCursorPos(5, 5)
     term.write("sompige sapjes")
     
+    term.redirect(term)
     local event, button, cx, cy = os.pullEvent()
-    if event == "monitor_click" then
-        term.write("Click!")
+    if event == "mouse_click" then
+        paintutils.drawBox(7, 15, 10, 15, colours.yellow)
     end
-
-    -- Button
-    paintutils.drawBox(7, 15, 10, 15, colours.yellow)
 
     resetColours()
     sleep(5)
