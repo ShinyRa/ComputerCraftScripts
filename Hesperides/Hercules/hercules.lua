@@ -10,8 +10,6 @@ local Tags = {
     regularChest  = "minecraft:chest",
 }
 
-local serving = false
-
 -- Helper function
 -- Find item in inventory
 function findInPocket(toFind)
@@ -99,7 +97,6 @@ end
 function depositPunch(location)
     local fruitPunchSlot = findInPocket(Tags.fruitPunch)
     if fruitPunchSlot > 0 then
-        findJuiceChest()
         turtle.select(fruitPunchSlot)
         if location == "store" then
             turtle.dropDown()
@@ -124,8 +121,10 @@ print("Check")
 
 rednet.open('right')
 
+local serving = false
+
 while true do
-    local senderId, message, protocol = rednet.receive("hesperides_order_punch")
+    local senderId, message, protocol = rednet.receive("hesperides_order_punch", 1)
     if message ~= nil then
         serving = true
     end
@@ -141,5 +140,5 @@ while true do
         craftPunch()
         depositPunch("store")
     end
-    sleep(1)
+    -- sleep(1)
 end
