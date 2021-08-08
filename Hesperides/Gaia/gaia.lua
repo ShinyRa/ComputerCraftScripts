@@ -63,6 +63,9 @@ while true do
     term.setTextColour(colours.red)
     term.write("Fruit punch")
     resetColours()
+
+    term.setCursorPos(18, 10)
+    ter.write("Free of charge!")
     
     paintutils.drawFilledBox(18, 14, 35, 16, colours.yellow)
     resetColours()
