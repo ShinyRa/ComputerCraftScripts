@@ -59,14 +59,14 @@ while true do
     paintutils.drawImage(punch, term.getCursorPos())
     resetColours()
     
-    term.setCursorPos(3, 17)
+    term.setCursorPos(3, 18)
     term.setTextColour(colours.red)
     term.write("Fruit punch")
     resetColours()
     
-    paintutils.drawFilledBox(18, 13, 35, 15, colours.yellow)
+    paintutils.drawFilledBox(18, 14, 35, 16, colours.yellow)
     resetColours()
-    term.setCursorPos(19, 10)
+    term.setCursorPos(19, 15)
     term.setTextColour(colours.black)
     term.setBackgroundColour(colours.yellow)
     term.write("order x64")
