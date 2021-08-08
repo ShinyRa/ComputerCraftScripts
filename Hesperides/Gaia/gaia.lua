@@ -51,7 +51,11 @@ while true do
     term.setCursorPos(4, 5)
     term.write("sompige sapjes")
     
-    term.setCursorPos(5, 9)
+    term.setTextColour(colours.white)
+    term.setCursorPos(1, 8)
+    term.write("#######################################")
+
+    term.setCursorPos(5, 10)
     paintutils.drawImage(punch, term.getCursorPos())
     resetColours()
     
@@ -60,7 +64,7 @@ while true do
     term.write("Fruit punch")
     resetColours()
     
-    paintutils.drawFilledBox(18, 9, 30, 11, colours.yellow)
+    paintutils.drawFilledBox(18, 13, 35, 15, colours.yellow)
     resetColours()
     term.setCursorPos(19, 10)
     term.setTextColour(colours.black)
