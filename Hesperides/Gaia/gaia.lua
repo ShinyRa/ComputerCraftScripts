@@ -60,9 +60,9 @@ while true do
     term.write("Fruit punch")
     resetColours()
     
-    paintutils.drawFilledBox(15, 10, 29, 13, colours.yellow)
+    paintutils.drawFilledBox(18, 9, 30, 11, colours.yellow)
     resetColours()
-    term.setCursorPos(18, 12)
+    term.setCursorPos(19, 10)
     term.setTextColour(colours.black)
     term.setBackgroundColour(colours.yellow)
     term.write("Order x64")
@@ -74,5 +74,5 @@ while true do
         rednet.broadcast({}, "hesperides_order_punch")
     end
 
-    sleep(3)
+    sleep(2)
 end
