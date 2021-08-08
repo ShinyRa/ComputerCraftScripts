@@ -10,6 +10,8 @@ local Tags = {
     regularChest  = "minecraft:chest",
 }
 
+local serving = false
+
 -- Helper function
 -- Find item in inventory
 function findInPocket(toFind)
@@ -78,7 +80,6 @@ end
 -- Helper function craft fruit punch
 function craftPunch()
     assert(findInPocket(Tags.juicerItem) > 0, "Required juicer not found in Hercules' inventory")
-    findMelonChest()
 
     while not canCraftPunch() do
         -- Loop through the crafting slots to meet fruit punch crafting recipe
@@ -95,12 +96,16 @@ function craftPunch()
 end
 
 -- Helper function deposit fruit punch
-function depositPunch()
+function depositPunch(location)
     local fruitPunchSlot = findInPocket(Tags.fruitPunch)
     if fruitPunchSlot > 0 then
         findJuiceChest()
         turtle.select(fruitPunchSlot)
-        turtle.dropDown()
+        if location == "store" then
+            turtle.dropDown()
+        else if location == "serve" then
+            turtle.drop()
+        end
     end 
 end
 
@@ -117,8 +122,24 @@ assert(peripheral.isPresent("right"), "No peripheral found on side 'right'")
 assert(peripheral.getType("right"), "Prerequisite modem not found on side 'right'")
 print("Check")
 
+rednet.open('right')
+
 while true do
-    craftPunch()
-    depositPunch()
+    local senderId, message, protocol = rednet.receive("hesperides_order_punch")
+    if message ~= nil then
+        serving = true
+    end
+
+    if serving then
+        findMelonChest()
+        turtle.suck()
+        findOutputChest()
+        depositPunch("serve")
+        serving = false
+    else
+        findMelonChest()
+        craftPunch()
+        depositPunch("store")
+    end
     sleep(1)
 end
