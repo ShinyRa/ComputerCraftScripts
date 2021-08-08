@@ -24,6 +24,11 @@ elseif string.lower(label) == "hercules" then
     print("Downloading files")
     shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Hercules/hercules.lua")
     shell.run("cp hercules.lua ../startup.lua")
+elseif string.lower(label) == "apollo" then
+    print("Installation for Apollo")
+    print("Downloading files")
+    shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Apollo/apollo.lua")
+    shell.run("cp apollo.lua ../startup.lua")
 end
 
 shell.setDir("/")
