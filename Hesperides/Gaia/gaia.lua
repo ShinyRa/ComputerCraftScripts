@@ -5,7 +5,6 @@ local logo2 = paintutils.loadImage("images/logo2.nfp")
 local punch = paintutils.loadImage("images/punch.nfp")
 
 local switch = true
--- local punchStock = 0
 -- Redirect all terminal traffic to screen
 term.redirect(screen)
 
@@ -36,11 +35,6 @@ local speaker = peripheral.wrap("left")
 rednet.open("right")
 
 while true do
-    -- local senderId, message, protocol = rednet.receive("hesperides_stock_adjust_punch", 5)
-    -- if message then
-    --     punchStock = punchStock + 1
-    -- end
-
     term.clear()
     term.setCursorPos(1, 1)
     
