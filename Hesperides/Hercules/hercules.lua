@@ -103,7 +103,7 @@ function depositPunch(location)
         turtle.select(fruitPunchSlot)
         if location == "store" then
             turtle.dropDown()
-        else if location == "serve" then
+        elseif location == "serve" then
             turtle.drop()
         end
     end 
@@ -132,7 +132,7 @@ while true do
 
     if serving then
         findMelonChest()
-        turtle.suck()
+        turtle.suckDown()
         findOutputChest()
         depositPunch("serve")
         serving = false
