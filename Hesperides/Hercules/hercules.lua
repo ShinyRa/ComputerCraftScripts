@@ -123,12 +123,14 @@ rednet.open('right')
 
 local serving = false
 
-while true do
+function receiveOrderRequest()
     local senderId, message, protocol = rednet.receive("hesperides_order_punch", 1)
     if message ~= nil then
         serving = true
     end
+end
 
+function botLogic()
     if serving then
         findMelonChest()
         turtle.suckDown()
@@ -140,5 +142,10 @@ while true do
         craftPunch()
         depositPunch("store")
     end
-    -- sleep(1)
+    
+    sleep(1)
+end
+
+while true do
+    parallel.waitForAny(receiveOrderRequest, botLogic)  
 end
