@@ -65,8 +65,10 @@ while true do
     term.setCursorPos(19, 10)
     term.setTextColour(colours.black)
     term.setBackgroundColour(colours.yellow)
-    term.write("Order x64")
+    term.write("order x64")
     resetColours()
+
+    term.setCursorPos(19, 10)
 
     local event = os.pullEvent()
     if event == "monitor_touch" then
