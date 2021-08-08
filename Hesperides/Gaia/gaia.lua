@@ -69,7 +69,7 @@ while true do
     
     paintutils.drawFilledBox(18, 14, 35, 16, colours.yellow)
     resetColours()
-    term.setCursorPos(19, 15)
+    term.setCursorPos(22, 15)
     term.setTextColour(colours.black)
     term.setBackgroundColour(colours.yellow)
     term.write("order x64")
