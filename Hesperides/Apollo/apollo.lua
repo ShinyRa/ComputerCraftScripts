@@ -38,3 +38,7 @@ local songs = {
     { tag = "outer_end:music_disc_unknown_frontier", name = "Pyrocide - Unknown frontier"},
     { tag = "fins:music_disc_crashing_tides", name = "Mr. Esuoh - Crashing tides"},
 }
+
+for index, song in ipairs(songs) do
+    print(song.name)
+end
