@@ -39,6 +39,15 @@ local songs = {
     { tag = "fins:music_disc_crashing_tides", name = "Mr. Esuoh - Crashing tides"},
 }
 
+print("Booting Apollo")
+print("Type: Computer")
+print("Prerequisites:")
+
+print("Speaker peripheral mounted to slot left")
+assert(peripheral.isPresent("left", "No peripheral found on side 'left'"))
+assert(peripheral.getType("left") == "speaker", "Prerequisite speaker not found on side 'left'")
+print("Check")
+
 for index, song in ipairs(songs) do
-    print(song.name)
+    term.blit(song.name, colours.white, index % 2 == 0 and colours.grey or colours.white)
 end
