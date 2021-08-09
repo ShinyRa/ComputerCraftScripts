@@ -50,7 +50,7 @@ print("Check")
 
 term.clear()
 
-for index in ipairs(songs) / 2 do
+for index in ipairs(songs) do
     if index % 2 == 0 then
         term.setTextColor(colours.blue)
     else
