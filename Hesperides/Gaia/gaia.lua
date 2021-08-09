@@ -1,17 +1,3 @@
-local screen = peripheral.wrap("top")
-
-local logo = paintutils.loadImage("images/logo.nfp")
-local logo2 = paintutils.loadImage("images/logo2.nfp")
-local punch = paintutils.loadImage("images/punch.nfp")
-
-local switch = true
--- Redirect all terminal traffic to screen
-term.redirect(screen)
-
-function resetColours()
-    term.setBackgroundColour(colours.black)
-    term.setTextColor(colours.white)
-end
 
 print("Booting Gaia")
 print("Type: Computer")
@@ -19,6 +5,11 @@ print("Prerequisites:")
 
 print("Images folder")
 assert(fs.isDir("images/"), "Prerequisite image folder not found on disk")
+print("Check")
+
+print("Screem mounted to slot top")
+assert(peripheral.isPresent("top"), "No peripheral found on side 'top'")
+assert(peripheral.getType("top") == "modem", "Prerequisite screen not found on side 'top'")
 print("Check")
 
 print("Wireless modem peripheral mounted to slot right")
@@ -31,8 +22,22 @@ assert(peripheral.isPresent("left", "No peripheral found on side 'left'"))
 assert(peripheral.getType("left") == "speaker", "Prerequisite speaker not found on side 'left'")
 print("Check")
 
+local logo = paintutils.loadImage("images/logo.nfp")
+local logo2 = paintutils.loadImage("images/logo2.nfp")
+local punch = paintutils.loadImage("images/punch.nfp")
+
+local screen = peripheral.wrap("top")
 local speaker = peripheral.wrap("left")
 rednet.open("right")
+
+local switch = true
+-- Redirect all terminal traffic to screen
+term.redirect(screen)
+
+function resetColours()
+    term.setBackgroundColour(colours.black)
+    term.setTextColor(colours.white)
+end
 
 while true do
     term.clear()
