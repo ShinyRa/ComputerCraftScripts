@@ -49,5 +49,5 @@ assert(peripheral.getType("left") == "speaker", "Prerequisite speaker not found 
 print("Check")
 
 for index, song in ipairs(songs) do
-    term.blit(song.name, colours.white, index % 2 == 0 and colours.grey or colours.white)
+    term.blit(song.name, "0", index % 2 == 0 and "0" or "9")
 end
