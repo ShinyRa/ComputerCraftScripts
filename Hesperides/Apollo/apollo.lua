@@ -48,12 +48,12 @@ assert(peripheral.isPresent("left", "No peripheral found on side 'left'"))
 assert(peripheral.getType("left") == "speaker", "Prerequisite speaker not found on side 'left'")
 print("Check")
 
-clear()
+term.clear()
 
-for index, song in ipairs(songs) do
+for index in ipairs(songs) / 2 do
     if index % 2 == 0 then
-        textutils.tabulate(colours.blue, { songs[index], songs[index * 2]})
+        textutils.tabulate(colours.blue, { songs[index].name, songs[index * 2].name})
     else
-        textutils.tabulate(colours.lightBlue, { songs[index], songs[index * 2]})
+        textutils.tabulate(colours.lightBlue, { songs[index].name, songs[index * 2].name})
     end
 end
