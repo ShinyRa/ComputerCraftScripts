@@ -52,8 +52,9 @@ term.clear()
 
 for index in ipairs(songs) / 2 do
     if index % 2 == 0 then
-        textutils.tabulate(colours.blue, { songs[index].name, songs[index * 2].name})
+        term.setTextColor(colours.blue)
     else
-        textutils.tabulate(colours.lightBlue, { songs[index].name, songs[index * 2].name})
+        term.setTextColor(colours.lightBlue)
     end
+    print(songs[index].name)
 end
