@@ -3,7 +3,6 @@ print("Removing junk")
 fs.delete("startup.lua")
 fs.delete("pulled/")
 fs.makeDir("pulled")
---hello
 shell.setDir("pulled/")
 local label = os.getComputerLabel()
 
@@ -30,6 +29,11 @@ elseif string.lower(label) == "apollo" then
     print("Downloading files")
     shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Apollo/apollo.lua")
     shell.run("cp apollo.lua ../startup.lua")
+elseif string.lower(label) == "ares" then
+    print("Installation for Ares")
+    print("Downloading files")
+    shell.run("wget https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/Hesperides/Ares/ares.lua")
+    shell.run("cp ares.lua ../startup.lua")
 end
 
 shell.setDir("/")
