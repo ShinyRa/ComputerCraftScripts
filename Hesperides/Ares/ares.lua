@@ -5,7 +5,9 @@ function hasItems()
 
     for slot = 1, TOTAL_SLOTS, 1 do
         turtle.select(slot)
-        totalItems = totalItems + turtle.getItemDetail()
+        if turtle.getItemDetail().count > 0 then
+            totalItems = totalItems + turtle.getItemDetail().count
+        end
     end
 
     return totalItems
@@ -18,7 +20,7 @@ while true do
         turtle.attack()
         turtle.suck()
     else
-        if hasItems > 0 then
+        if hasItems() > 0 then
             turtle.turnRight()
             for slot = 1, TOTAL_SLOTS, 1 do
                 turtle.select(slot)
