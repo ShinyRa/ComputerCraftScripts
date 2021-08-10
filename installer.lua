@@ -3,6 +3,7 @@ print("Removing junk")
 fs.delete("startup.lua")
 fs.delete("pulled/")
 fs.makeDir("pulled")
+--hello
 shell.setDir("pulled/")
 local label = os.getComputerLabel()
 
