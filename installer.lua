@@ -59,6 +59,20 @@ local installationTree = {
 
 local selectedBotIndex = 1
 
+local function getBotByIndex(index)
+    local botIndex = 1
+
+    for folder, entry in pairs(installationTree) do
+        for name, programme in pairs(entry.children) do
+            if botIndex == index then
+                return programme
+            end
+
+            botIndex = botIndex + 1
+        end
+    end
+end
+
 local function installSelected()
     shell.run("set motd.enabled false")
     fs.delete("startup.lua")
@@ -77,20 +91,6 @@ local function installSelected()
     shell.setDir("/")
     fs.delete("installer.lua")
     shell.run("reboot")
-end
-
-local function getBotByIndex(index)
-    local botIndex = 1
-
-    for folder, entry in pairs(installationTree) do
-        for name, programme in pairs(entry.children) do
-            if botIndex == index then
-                return programme
-            end
-
-            botIndex = botIndex + 1
-        end
-    end
 end
 
 local function getAmountOfBots()
