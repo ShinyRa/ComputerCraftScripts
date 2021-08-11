@@ -109,17 +109,20 @@ while true do
     
     local currentBotIndex = 1
     for folder, entry in pairs(installationTree) do
+        term.setTextColour(colours.blue)
         print(folder .. "/" .. " (" .. entry.info .. ")")
         for name, programme in pairs(entry.children) do
             if currentBotIndex == selectedBotIndex then
+                term.setTextColour(colours.white)
                 write(">> ")
             end
+            term.setTextColour(colours.lightBlue)
             print(pretty.nest(3, pretty.text("  " .. name .. " (" .. programme.info .. ") " .. programme.peripherals)))
 
             currentBotIndex = currentBotIndex + 1
         end
     end
-
+    term.setTextColour(colours.white)
     local event, key = os.pullEvent("key")
 
     if (
