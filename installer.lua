@@ -9,35 +9,39 @@ local installationTree = {
                 info = "Music terminal",
                 type = "Computer",
                 peripherals = "[♬, ⌧*]",
+                namespace = "Herperides/",
                 files = {
-                    "Herperides/apollo.lua"
+                    "apollo.lua"
                 }
             },
             ["Ares"] = {
                 info = "XP bot",
                 type = "Turtle (⚔)",
                 peripherals = "[]",
+                namespace = "Herperides/",
                 files = {
-                    "Herperides/ares.lua"
+                    "ares.lua"
                 }
             },
             ["Gaia"] = {
                 info = "Drink ordering terminal",
                 type = "Computer",
                 peripherals = "[♬, ⛀, ⌧]",
+                namespace = "Herperides/",
                 files = {
-                    "Herperides/gaia.lua",
-                    "Herperides/images/logo.nfp",
-                    "Herperides/images/logo2.nfp",
-                    "Herperides/images/punch.nfp"
+                    "gaia.lua",
+                    "images/logo.nfp",
+                    "images/logo2.nfp",
+                    "images/punch.nfp"
                 }
             },
             ["Hercules"] = {
                 info = "Music bot",
                 type = "Computer",
                 peripherals = "[⛀]",
+                namespace = "Herperides/",
                 files = {
-                    "Herperides/hercules.lua"
+                    "hercules.lua"
                 }
             }
         }
@@ -49,8 +53,9 @@ local installationTree = {
                 info = "Tree cutting bot",
                 type = "Turtle 🪓",
                 peripherals = "[⛀]",
+                namespace = "Yggdrasil/",
                 files = {
-                    "Yggdrasil/thor.lua"
+                    "thor.lua"
                 }
             }
         }
@@ -83,7 +88,7 @@ local function installSelected()
     local bot = getBotByIndex(selectedBotIndex)
 
     for index, file in ipairs(bot.files) do
-        shell.run("wget " .. repository .. file)
+        shell.run("wget " .. repository .. bot.namespace .. file)
     end
 
     shell.run("cp " .. bot.files[1] .. " ../startup.lua")
