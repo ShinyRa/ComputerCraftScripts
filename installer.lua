@@ -1,10 +1,77 @@
+local installationTree = {
+    ["Herperides"] = {
+        info = ""
+        children = {
+            ["Apollo"] = {
+                info = "Music terminal",
+                type = "Computer",
+                peripherals = "[♬, ⌧*]",
+                files = {
+                    "apollo.lua"
+                }
+            }
+            ["Ares"] = {
+                info = "XP bot",
+                type = "Turtle (⚔)"
+                peripherals = "[]",
+                files = {
+                    "ares.lua"
+                }
+            }
+            ["Gaia"] = {
+                info = "Drink ordering terminal",
+                type = "Computer"
+                peripherals = "[♬, ⛀, ⌧]",
+                files = {
+                    "gaia.lua",
+                    "images/logo.nfp",
+                    "images/logo2.nfp",
+                    "images/punch.nfp",
+                }
+            }
+            ["Hercules"] = {
+                info = "Music bot",
+                type = "Computer"
+                peripherals = "[⛀]",
+                files = {
+                    "hercules.lua"
+                }
+            }
+        }
+    },
+    ["Yggdrasil"] = {
+        info = ""
+        children = {
+            ["Thor"] = {
+                info = "Tree cutting bot",
+                type = "Turtle 🪓"
+                peripherals = "[⛀]",
+                files = {
+                    "thor.lua"
+                }
+            }
+        }
+    }
+}
+
+local url = "https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main"
+
+
+term.clear()
+
+local label = os.getComputerLabel()
+if label then
+    print("Running installer for: " .. label)
+else
+    print("Running installer for: " .. os.getComputerID())
+end
+
 shell.run("set motd.enabled false")
 print("Removing junk")
 fs.delete("startup.lua")
 fs.delete("pulled/")
-fs.makeDir("pulled")
 shell.setDir("pulled/")
-local label = os.getComputerLabel()
+fs.makeDir("pulled")
 
 if string.lower(label) == "gaia" then
     print("Installation for Gaia")
