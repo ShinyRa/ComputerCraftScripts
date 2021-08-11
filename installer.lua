@@ -9,7 +9,7 @@ local installationTree = {
                 info = "Music terminal",
                 type = "Computer",
                 peripherals = "[♬, ⌧*]",
-                namespace = "Herperides/",
+                namespace = "Herperides/Apollo/",
                 files = {
                     "apollo.lua"
                 }
@@ -18,7 +18,7 @@ local installationTree = {
                 info = "XP bot",
                 type = "Turtle (⚔)",
                 peripherals = "[]",
-                namespace = "Herperides/",
+                namespace = "Herperides/Ares/",
                 files = {
                     "ares.lua"
                 }
@@ -27,7 +27,7 @@ local installationTree = {
                 info = "Drink ordering terminal",
                 type = "Computer",
                 peripherals = "[♬, ⛀, ⌧]",
-                namespace = "Herperides/",
+                namespace = "Herperides/Gaia/",
                 files = {
                     "gaia.lua",
                     "images/logo.nfp",
@@ -39,7 +39,7 @@ local installationTree = {
                 info = "Music bot",
                 type = "Computer",
                 peripherals = "[⛀]",
-                namespace = "Herperides/",
+                namespace = "Herperides/Hercules/",
                 files = {
                     "hercules.lua"
                 }
@@ -53,7 +53,7 @@ local installationTree = {
                 info = "Tree cutting bot",
                 type = "Turtle 🪓",
                 peripherals = "[⛀]",
-                namespace = "Yggdrasil/",
+                namespace = "Yggdrasil/Thor/",
                 files = {
                     "thor.lua"
                 }
