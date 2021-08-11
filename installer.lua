@@ -76,8 +76,8 @@ shell.run("set motd.enabled false")
 print("Removing junk")
 fs.delete("startup.lua")
 fs.delete("pulled/")
-shell.setDir("pulled/")
 fs.makeDir("pulled")
+shell.setDir("pulled/")
 
 if string.lower(label) == "gaia" then
     print("Installation for Gaia")
