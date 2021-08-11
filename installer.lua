@@ -104,6 +104,7 @@ local function getAmountOfBots()
 end
 
 while true do
+    term.clear()
     term.setCursorPos(1, 1)
     local event, key = os.pullEvent("key")
 
