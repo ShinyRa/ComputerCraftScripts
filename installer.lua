@@ -2,14 +2,14 @@ local pretty = require("cc.pretty")
 local repository = "https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main/"
 
 local installationTree = {
-    ["Herperides"] = {
+    ["Hesperides"] = {
         info = "Farm bots",
         children = {
             ["Apollo"] = {
                 info = "Music terminal",
                 type = "Computer",
                 peripherals = "[♬, ⌧*]",
-                namespace = "Herperides/Apollo/",
+                namespace = "Hesperides/Apollo/",
                 files = {
                     "apollo.lua"
                 }
@@ -18,7 +18,7 @@ local installationTree = {
                 info = "XP bot",
                 type = "Turtle (⚔)",
                 peripherals = "[]",
-                namespace = "Herperides/Ares/",
+                namespace = "Hesperides/Ares/",
                 files = {
                     "ares.lua"
                 }
@@ -27,7 +27,7 @@ local installationTree = {
                 info = "Drink ordering terminal",
                 type = "Computer",
                 peripherals = "[♬, ⛀, ⌧]",
-                namespace = "Herperides/Gaia/",
+                namespace = "Hesperides/Gaia/",
                 files = {
                     "gaia.lua",
                     "images/logo.nfp",
@@ -39,7 +39,7 @@ local installationTree = {
                 info = "Music bot",
                 type = "Computer",
                 peripherals = "[⛀]",
-                namespace = "Herperides/Hercules/",
+                namespace = "Hesperides/Hercules/",
                 files = {
                     "hercules.lua"
                 }
