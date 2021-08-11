@@ -106,6 +106,20 @@ end
 while true do
     term.clear()
     term.setCursorPos(1, 1)
+    
+    local currentBotIndex = 1
+    for folder, entry in pairs(installationTree) do
+        print(folder .. "/" .. " (" .. entry.info .. ")")
+        for name, programme in pairs(entry.children) do
+            if currentBotIndex == selectedBotIndex then
+                write(">> ")
+            end
+            print(pretty.nest(3, pretty.text("  " .. name .. " (" .. programme.info .. ") " .. programme.peripherals)))
+
+            currentBotIndex = currentBotIndex + 1
+        end
+    end
+
     local event, key = os.pullEvent("key")
 
     if (
@@ -125,22 +139,6 @@ while true do
     if (keys.getName(key) == "enter") then
         installSelected()
     end
-
-    
-    for folder, entry in pairs(installationTree) do
-        local currentBotIndex = 1
-        print(folder .. "/" .. " (" .. entry.info .. ")")
-        for name, programme in pairs(entry.children) do
-            if currentBotIndex == selectedBotIndex then
-                write(">> ")
-            end
-            print(pretty.nest("  " .. name .. " (" .. programme.info .. ") " .. programme.peripherals))
-
-            currentBotIndex = currentBotIndex + 1
-        end
-    end
-
-    sleep(1)
 end
 
 
