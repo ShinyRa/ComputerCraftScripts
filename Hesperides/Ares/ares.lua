@@ -1,12 +1,11 @@
 local TOTAL_SLOTS = 16
--- test
 function hasItems()
     local totalItems = 0
 
     for slot = 1, TOTAL_SLOTS, 1 do
         turtle.select(slot)
-        if turtle.getItemDetail().count > 0 then
-            totalItems = totalItems + turtle.getItemDetail().count
+        if turtle.getItemCount() > 0 then
+            totalItems = totalItems + turtle.getItemCount()
         end
     end
 
