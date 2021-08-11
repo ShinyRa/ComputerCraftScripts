@@ -82,7 +82,7 @@ local function installSelected()
 
     local bot = getBotByIndex(selectedBotIndex)
 
-    for file in bot.files do
+    for index, file in ipairs(bot.files) do
         shell.run("wget " .. repository .. file)
     end
 
@@ -115,8 +115,9 @@ while true do
             if currentBotIndex == selectedBotIndex then
                 term.setTextColour(colours.white)
                 write(">> ")
+            else
+                term.setTextColour(colours.lightBlue)
             end
-            term.setTextColour(colours.lightBlue)
             print(pretty.nest(3, pretty.text("  " .. name .. " (" .. programme.info .. ") " .. programme.peripherals)))
 
             currentBotIndex = currentBotIndex + 1
