@@ -1,6 +1,8 @@
+local url = "https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main"
+
 local installationTree = {
     ["Herperides"] = {
-        info = ""
+        info = "Farm bots",
         children = {
             ["Apollo"] = {
                 info = "Music terminal",
@@ -9,29 +11,29 @@ local installationTree = {
                 files = {
                     "apollo.lua"
                 }
-            }
+            },
             ["Ares"] = {
                 info = "XP bot",
-                type = "Turtle (⚔)"
+                type = "Turtle (⚔)",
                 peripherals = "[]",
                 files = {
                     "ares.lua"
                 }
-            }
+            },
             ["Gaia"] = {
                 info = "Drink ordering terminal",
-                type = "Computer"
+                type = "Computer",
                 peripherals = "[♬, ⛀, ⌧]",
                 files = {
                     "gaia.lua",
                     "images/logo.nfp",
                     "images/logo2.nfp",
-                    "images/punch.nfp",
+                    "images/punch.nfp"
                 }
-            }
+            },
             ["Hercules"] = {
                 info = "Music bot",
-                type = "Computer"
+                type = "Computer",
                 peripherals = "[⛀]",
                 files = {
                     "hercules.lua"
@@ -40,11 +42,11 @@ local installationTree = {
         }
     },
     ["Yggdrasil"] = {
-        info = ""
+        info = "Woodcutting bots",
         children = {
             ["Thor"] = {
                 info = "Tree cutting bot",
-                type = "Turtle 🪓"
+                type = "Turtle 🪓",
                 peripherals = "[⛀]",
                 files = {
                     "thor.lua"
@@ -54,8 +56,12 @@ local installationTree = {
     }
 }
 
-local url = "https://raw.githubusercontent.com/ShinyRa/ComputerCraftScripts/main"
-
+for folder, entry in pairs(installationTree) do
+    print(folder .. "/" .. " (" .. entry.info .. ")")
+    for name, programme in pairs(entry.children) do
+        print("  " .. name .. " (" .. programme.info .. ") " .. programme.peripherals)
+    end
+end
 
 term.clear()
 
